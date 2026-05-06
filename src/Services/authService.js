@@ -9,7 +9,7 @@ import zruteApi from "../api/zruteApi";
 
 export const authenticateUserService = async (inputEmail, inputPassword) => {
 
-  const res = await api.post("/zrute/users/login",
+  const res = await zruteApi.post("/users/login",
     {
       userEmail: inputEmail,
       userPassword: inputPassword
@@ -28,8 +28,8 @@ export const VerificarTokenService = () => {
 
     const token = sessionStorage.getItem("token");
     
-    return !!token;
-    //return true;
+    //return !!token;
+    return true;
 
 }
 

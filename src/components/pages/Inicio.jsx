@@ -2,6 +2,11 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { VerificarTokenService } from '../../Services/authService';
 import { useNavigateViajar } from '../../hooks/useNavigateViajar'
+import '../../styles/inicio_page.css'
+
+import Subtitle from '../ui/subtitleStyle_v1'
+import Button from '../ui/buttonStyle_v1';
+import Line from '../ui/lineStyle_v1';
 
 export const Inicio = () => {
 
@@ -9,41 +14,32 @@ export const Inicio = () => {
 
   return (
     <div>
-      <section id='#inicio' >
-        <div className='inicio'>
-          <h2 className='tab-model'>LAS MEJORES RUTAS</h2>
-          <h3 className='tab-h3'>RUTAS REALES Y SEGURAS</h3>
-          <h3 className='tab-h3-two'>Planifica tu próximo recorrido ahora</h3>
+      <section className='inicio' id='start'>
 
-          <ul className='tab-buttons'>
-            <li><a to='#' onClick={ navigateViajar } >Planificar Ruta</a></li>
-            <li><a to='#' onClick={ navigateViajar} >Iniciar Sesión</a></li>
-          </ul>
+        <Subtitle text="Disponible solo en Trujillo" />
+
+        <h3 className='inicio-title'>RUTAS REALES Y SEGURAS</h3>
+        <h3 className='inicio-text'>describan aqui el asunto de la app en 2 lineas</h3>
+
+        <div className='inicio-content-display'>
+          <Button text="Planificar Ruta" action={navigateViajar} />
+          <Button text="Iniciar Sesion" action={navigateViajar} />
         </div>
 
-      </section>
-
-      <section id='#presencia'>
-        <div className='content-linea'>
-          <div className="linea"></div>
-        </div>
-        <div className='swich-model'>
-
-          <div className='case1'>
-            <h2 className='case-title'>🌎 LAS MEJORES RUTAS</h2>
-
-            <h2 className='case-title2'>Descubre lugares increíbles del distrito de Trujillo viajando con nuestra app de mejores rutas.</h2>
-          </div>
-          <div className='case1 case2'>
-            <img src="https://vycocode.com/img/map.webp" alt="" />
-          </div>
-
-        </div>
-
-
+      </section >
+      <Line
+        textContent="Descubre lugares increíbles del distrito de Trujillo viajando con nuestra app de mejores rutas."
+        oneTitle="Las mejores"
+        twoTitle="Rutas"
+      />
+      <section className='center inicio-description' id='description'>
+        <img src="https://vycocode.com/img/map.webp" alt="" />
       </section>
 
 
     </div>
   )
 }
+
+
+//<Line textContent = "aaa" oneTitle="sdsd" twoTitle="asdsad"/>

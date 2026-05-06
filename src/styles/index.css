@@ -1,10 +1,18 @@
 :root {
-  --header-bg-blur: blur(5px);
-  --header-bg: #0508117e;
-  --header-color: #EEEEEE;
+  /*========================== vars globales ======================*/
+  --color-text-white: white;
+  --color-text-description: #948ee9;
+  --color-text-gradient: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
 
+
+  --header-bg-blur: blur(5px);
+  --header-bg: #0b0b1fbe;
+  --header-color: #948ee9c4;
+  --header-color-hover: #08caca;
 
   --logo-app-color: #ffffff;
+  /*==============================================================*/
+
 
   --text: #6b6375;
   --text-h: rgb(255, 255, 255);
@@ -18,10 +26,7 @@
   --shadow:
     rgb(238, 234, 234) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --bg: radial-gradient(ellipse at 50% 0%,
-      #351674 0%,
-      
-      transparent 45%);
+  --bg: #0F172A;
 
   --sans: 'Poppins', sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -31,8 +36,9 @@
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background-color: #030712; /* tu color base */
-  background-image: var(--bg);
+  background-color: #060815;
+  /* tu color base */
+
   height: auto;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,4 +48,47 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+
+
+
+
+
+
+
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+
+  .content-index-1 {
+    justify-content: center;
+  }
+}
+
+.center {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }

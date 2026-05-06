@@ -6,7 +6,7 @@ export const useUserNameStore = create((set)) = (({
     
     setUserName: (newUserName) => 
         set({
-            userName = newUserName
+            userName: newUserName
         })
     
 

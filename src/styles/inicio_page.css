@@ -1,0 +1,48 @@
+
+.inicio {
+  padding-top: 5rem;
+  width: 99%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.inicio-title {
+
+
+    color: var(--color-text-white);
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.0;
+    margin: 0;
+    
+    margin-bottom: 1rem;
+    width: 99%;
+    text-align: center;
+}
+
+.inicio-text {
+    color: #7577AC;
+    font-size: 0.9rem;
+    line-height: 1;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.inicio-content-display{
+    display: flex;
+    gap: 1rem;
+}
+
+.inicio-description{
+    overflow: hidden;
+    max-width: 1920px;
+}
+
+.inicio-description img{
+    margin: 1rem;   
+    max-width: 50%;
+}

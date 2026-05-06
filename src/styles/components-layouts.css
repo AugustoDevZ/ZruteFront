@@ -1,0 +1,68 @@
+.header-content {
+
+    width: 100%;
+    position: fixed;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    max-width: 1920px;
+
+
+    background-color: var( --header-bg); 
+    backdrop-filter: var(--header-bg-blur);
+    border-bottom: 2px solid #1B1B42;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header-internal {
+    width: 30%;
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.header-internal h1 {
+    color: white;
+    font-size: 19px;
+}
+
+.header-internal a {
+    padding-left: 2rem;
+    color: var(--header-color);
+    transition: color 0.5s ease;
+    font-size: 14px;
+}
+
+.header-internal a:hover {
+    color: var(--header-color-hover);
+    /*box-shadow: 0 0 10px rgba(165, 42, 42, 0.6);*/
+}
+
+.header-access {
+    justify-content: end;
+    z-index: 1000;
+}
+
+.header-access a {
+    justify-content: end;
+    background-color: #0F1420;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    ;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+}
+
+
+.header-access a:hover {
+    background-color: #2D3443;
+}
+
+.header-icon{
+    color: var(--logo-app-color);
+}
