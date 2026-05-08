@@ -33,11 +33,13 @@ export const Rutas = () => {
           <Route path="/login" element={<Auth
             textOptionButton="Acceder"
             textOptionAuth="No tengo una cuenta"
-            titleAuth="Accede a tu cuenta" />} />
+            titleAuth="Accede a tu cuenta"
+            type={1}/>} />
           <Route path="/register" element={<Auth
             textOptionButton="Registrarme"
             textOptionAuth="Ya tengo una cuenta"
-            titleAuth="Crea una cuenta" />} />
+            titleAuth="Crea una cuenta" 
+            type={2}/>} />
         </Route>
 
         <Route element={<LayoutPrivado />}>

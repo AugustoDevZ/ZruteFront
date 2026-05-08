@@ -1,0 +1,88 @@
+.login {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.auth-info{
+    color: rgb(240, 135, 135);
+    font-size: 12px;
+}
+.login-content {
+    background-color: white;
+    width: 25rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content h2 {
+    width: 100%;
+    text-align: center;
+    color: #030712;
+    font-size: 100%;
+}
+
+.input-gmail {
+    box-shadow: 0 0 10px rgba(116, 116, 116, 0.699);
+    width: 60%;
+    padding: 5px;
+    color: #5921b9;
+    border-radius: 20px;
+    display: flex;
+    margin: 0.8rem;
+}
+
+.input-gmail input {
+    background-color: transparent;
+    border: 0;
+    margin-left: 0.5rem;
+    color: #030712;
+}
+
+.input-gmail i {
+    margin-left: 0.5rem;
+}
+
+.input-gmail input:focus {
+    outline: none;
+
+}
+
+.login-logo {
+    margin-top: 1rem;
+    background: var(--color-text-gradient);
+    padding-right: 0.7rem;
+    border-radius: 12px;
+}
+
+.login-oteroption {
+    margin-bottom: 1rem;
+}
+
+.login-oteroption a {
+    background-color: transparent;
+    border: transparent;
+    color: var(--color-text-description);
+    font-size: 14px;
+}
+
+.login-oteroption a:hover {
+    color: #b691fc;
+}
+
+@media (max-width: 768px) {
+
+    .login-content {
+        width: 80%;
+    }
+
+    .input-gmail {
+        width: 75%;
+    }
+
+}

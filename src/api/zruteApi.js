@@ -2,7 +2,7 @@ import axios from "axios";
 
 const zruteApi = axios.create({
 
-  baseURL: "https://localhost:7156/zrute",
+  baseURL: "http://localhost:3000/zrute",
 
   headers: {
     "Content-Type": "application/json"

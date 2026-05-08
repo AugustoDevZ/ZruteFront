@@ -9,16 +9,53 @@ import zruteApi from "../api/zruteApi";
 
 export const authenticateUserService = async (inputEmail, inputPassword) => {
 
-  const res = await zruteApi.post("/users/login",
-    {
-      userEmail: inputEmail,
-      userPassword: inputPassword
-    }
-  );
+  try {
+    const res = await zruteApi.post("/login",
+      {
+        email: inputEmail,
+        password: inputPassword
+      }
+    );
 
-  return res.data;
+    if (!res.data?.token) {
+      return null;
+    }
+
+    localStorage.setItem("token", res.data.token);
+    return res.data;
+  } catch (error) {
+    return null;
+  }
 };
 
+
+export const registerUserService = async (inputEmail, inputPassword) => {
+
+  try {
+    const res = await zruteApi.post("/register",
+      {
+        name: "User",
+        img: "",
+        theme: "default",
+        lang: "es-ES",
+        email: inputEmail,
+        password: inputPassword
+      }
+    );
+
+    
+
+    if (!res.data?.token) {
+      return null;
+    }
+
+    localStorage.setItem("token", res.data.token);
+    return res.data;
+  } catch (error) {
+    console.log("REGISTER ERROR:", error.response?.data);
+    return null;
+  }
+};
 
 /*-----------------------------------------
     Método o funcion para verificar token cuando tengamos JWT
@@ -26,11 +63,15 @@ export const authenticateUserService = async (inputEmail, inputPassword) => {
 
 export const VerificarTokenService = () => {
 
-    const token = sessionStorage.getItem("token");
-    
-    //return !!token;
-    return true;
+  const token = localStorage.getItem("token");
+  return !!token;
+  //return true;
 
 }
 
 
+
+export const exitAuthService = () => {
+  localStorage.removeItem("token");
+  
+}

@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { exitAuthService } from "../../Services/authService"
+import { useNavigate } from "react-router-dom";
+
+
 export const Nav = () => {
 
+  const navigate = useNavigate();
 
   /*
   <h2 className='general-title'>PERFIL</h2>
@@ -18,7 +23,10 @@ export const Nav = () => {
         </ul>
   
   */
-
+  const exit = (e) => {
+    exitAuthService();
+    navigate("/login");
+  }
   return (
     <div className='navar'>
 
@@ -66,7 +74,7 @@ export const Nav = () => {
 
       </ul>
 
-
+      <button onClick={exit}> Cerrrar sesion</button>
 
     </div>
   )

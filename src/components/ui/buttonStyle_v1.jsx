@@ -5,7 +5,7 @@ const button_v1 = ({text, action}) => {
   return (
     <a to="#" onClick={ action } className='custom-button' >
       
-      <span>{text}</span>
+      <span  >{text}</span>
     </a>
   )
 }

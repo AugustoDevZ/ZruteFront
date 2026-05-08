@@ -9,11 +9,18 @@ import zruteApi from "../api/zruteApi";
 export const PerfilUserService = async () => {
 
 
-    //const token = sessionStorage.getItem("token");
+    const token = localStorage.getItem("token");
+    if (!token){
+        return null;
+    }
 
     const res = await zruteApi.get(
-        "/users/perfil",
-        
+        "/users/me",
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }
     );
     return res.data;
 };

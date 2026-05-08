@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
-import { authenticateUserService, VerificarTokenService } from '../../Services/authService';
+import { authenticateUserService, VerificarTokenService, registerUserService } from '../../Services/authService';
+import "../../styles/login_page.css"
+import Button from '../ui/buttonStyle_v1';
+import { useNavigate } from "react-router-dom";
 
-
-export const Auth = ({ textOptionButton, textOptionAuth, titleAuth, type = 1}) => {
+export const Auth = ({ textOptionButton, textOptionAuth, titleAuth, type = 1 }) => {
 
   const isAuth = VerificarTokenService();
   if (isAuth) {
@@ -17,24 +19,67 @@ export const Auth = ({ textOptionButton, textOptionAuth, titleAuth, type = 1}) =
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [infoAuth, setInfoAuth] = useState("")
+  const [cooldown, setCooldown] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
-    try {
 
-      const res = await authenticateUserService(email, password);
-      console.log("LOGIN OK:", res);
+    switch (linkOption) {
+      case "/login":
+        if (!email || !password) {
+          setInfoAuth("Ingresa todos los datos para registrar")
+          return;
+        }
 
-    } catch (error) {
-      console.log("ERROR:", error.response?.data);
+        try {
+
+          const res = await registerUserService(email, password);
+          if (!res) {
+            console.log("LOGIN NULL:", res);
+            setInfoAuth("Registro fallido")
+            return;
+          }
+
+          console.log("LOGIN OK:", localStorage.getItem("token"));
+
+        } catch (error) {
+          console.log("ERROR:", error.response?.data);
+        }
+
+      case "/register":
+        if (!email || !password) {
+          setInfoAuth("Ingresa todos los datos para proceder")
+          return;
+        }
+
+        try {
+
+          const res = await authenticateUserService(email, password);
+          if (!res || res == null) {
+            console.log("LOGIN NULL:", res);
+            setInfoAuth("Usuario o contraseñas incorrectos")
+            return;
+          }
+
+          console.log("LOGIN OK:", localStorage.getItem("token"));
+
+        } catch (error) {
+          console.log("ERROR:", error.response?.data);
+        }
+
+
     }
+
+    
+    navigate("/viajar");
   };
 
 
-  const LinkOption = () => {
-    if (type === 1) return '/register'
-    return '/login'
-  };
+  const linkOption =
+    type === 1
+      ? "/register"
+      : "/login";
 
 
 
@@ -55,7 +100,7 @@ export const Auth = ({ textOptionButton, textOptionAuth, titleAuth, type = 1}) =
         </div>
 
         <h2 className='tab-h3-two'>{titleAuth}</h2>
-
+        <h4 className='auth-info'>{infoAuth}</h4>
         <div className='input-gmail'>
           <i className="fa-solid fa-at"></i>
           <input
@@ -85,12 +130,9 @@ export const Auth = ({ textOptionButton, textOptionAuth, titleAuth, type = 1}) =
 
           />
         </div>
-
-        <div className='login-buttons'>
-          <button onClick={handleLogin} >{textOptionButton}</button>
-        </div>
-        <div className='oteroption'>
-          <Link to={LinkOption()}>{textOptionAuth}</Link>
+        <Button action={handleLogin} text={textOptionButton}></Button>
+        <div className='login-oteroption'>
+          <Link to={linkOption} onClick={() => setInfoAuth("")}>{textOptionAuth}</Link>
         </div>
       </div>
 

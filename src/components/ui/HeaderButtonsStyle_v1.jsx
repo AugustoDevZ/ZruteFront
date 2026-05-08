@@ -20,12 +20,16 @@ const HeaderButtonsStyle_v1 = () => {
 
             if (auth) {
 
-                const dataApi = await PerfilUserService();
+                const res = await PerfilUserService();
+                if (!res?.data) {
+                    console.log(`Errorrrrr ${res}`)
+                    return;
+                }
 
-                if (dataApi.image) {
+                if (res.img) {
 
                     const rute =
-                        `data:image/png;base64,${dataApi.image}`;
+                        `data:image/png;base64,${data.image}`;
                     setImage(rute);
 
                 } else {
