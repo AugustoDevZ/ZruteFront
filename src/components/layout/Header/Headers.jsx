@@ -1,80 +1,11 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
-
-import '../../styles/components-layouts.css'
-
-import HeaderButton from '../ui/HeaderButtonsStyle_v1';
+import './Headers.css'
+import HeaderButton from '../../ui/ButtonHeader/ButtonHeader';
 
 export const Headers = () => {
 
-  /*
-
-antesp use aqui el evento  onClick={AccederVerificar} recuerden si pongo  onClick={AccederVerificar()} se ejecuta al renderizar página.
-
-  Variables:
- 
-   - const : su valor no varia
-   - let: su valor peude variar
- 
-  Eventos:
- 
-  <button onClick={...} />
- <a onClick={...} />
- <div onClick={...} />
- <li onClick={...} />a
- <span onClick={...} />
-  
- Mouse:
- 
- onClick
- onDoubleClick
- onMouseEnter
- onMouseLeave
- 
- Inputs: 
- 
- onChange
- onInput
- onFocus
- onBlur
- 
- Formularios:
- onSubmit
- 
- 
- 
- const AccederVerificar = (e) => { solo se usa (e) cuando se tratará de un evento.
- 
- 
- ========== almacenamiento:
- 
- Guardar:
- localStorage.setItem("user", JSON.stringify({ name: "Augusto" }));
- 
- ->> JSON.stringify : es como convertir de objeto a texto 
- - >>JSON.parse : es como convertir de texto a objeto
- 
- 
- Leer:
- const user = JSON.parse(localStorage.getItem("user"));
- 
- Borrar
- localStorage.removeItem("user");
- 
-
- ============== otros
-
- e.preventDefault(); ---->> es el que detiene el evento default del control se usa con los eventos de arriba
- 
- */
-  
-
   return (
-
-
-
-
-
     <div className='header-content'>
       <div className='header-internal'>
 

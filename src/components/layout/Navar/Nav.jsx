@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { exitAuthService } from "../../Services/authService"
+import { exitAuthService } from "../../../Services/authService"
 import { useNavigate } from "react-router-dom";
 
 

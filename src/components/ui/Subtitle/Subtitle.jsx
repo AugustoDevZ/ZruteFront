@@ -1,7 +1,7 @@
-import '../../styles/subtitle_v1.css'
+import './Subtitle.css'
 
 
-const subtitle_v1 = ({text}) => {
+const Subtitle = ({text}) => {
   return (
     <a to="" className='custom-subtitle' >
       <div className='subtitle-point'></div>
@@ -11,6 +11,6 @@ const subtitle_v1 = ({text}) => {
 }
 
 
-export default subtitle_v1
+export default Subtitle
 
 

@@ -1,7 +1,7 @@
-import '../../styles/line_v1.css'
+import './LineSubtitle.css'
 
 
-const lineStyle_v1 = ({ textContent, oneTitle, twoTitle }) => {
+const LineSubtitle = ({ textContent, oneTitle, twoTitle }) => {
     return (
         <div className='line-allcontent'>
             <div className="line-content">
@@ -22,4 +22,4 @@ const lineStyle_v1 = ({ textContent, oneTitle, twoTitle }) => {
     )
 }
 
-export default lineStyle_v1
+export default LineSubtitle

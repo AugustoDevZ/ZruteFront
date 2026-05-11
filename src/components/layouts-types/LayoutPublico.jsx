@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Headers } from "../Headers";
+import { Headers } from "../layout/Header/Headers";
 
 const LayoutPublico = () => {
     return (

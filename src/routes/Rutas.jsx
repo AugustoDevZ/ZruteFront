@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import { Auth } from '../components/pages/Auth';
-import { Viajar } from '../components/pages/Viajar';
-import { Reseñas } from '../components/pages/Reseñas';
-import { Historial } from '../components/pages/Historial';
-import { Configurar } from '../components/pages/Configurar';
-import LayoutPublico from '../components/layout/typesLayouts/LayoutPublico';
-import LayoutPrivado from '../components/layout/typesLayouts/LayoutPrivado';
+import { Auth } from '../components/pages/Auth/Auth';
+import { Viajar } from '../components/pages/Viajar/Viajar';
+import { Reseñas } from '../components/pages/Reviews/Reseñas';
+import { Historial } from '../components/pages/Historial/Historial';
+import { Configurar } from '../components/pages/Config/Configurar';
+import LayoutPublico from '../components/layouts-types/LayoutPublico';
+import LayoutPrivado from '../components/layouts-types/LayoutPrivado';
+import LayoutAccess from '../components/layouts-types/LayoutAccess';
+import { Footer } from '../components/layout/Footer/Footer';
+import { Inicio } from '../components/pages/Inicio/Inicio';
 
-import { Footer } from '../components/layout/Footer';
-import { Inicio } from '../components/pages/Inicio';
-import LayoutAccess from '../components/layout/typesLayouts/LayoutAccess';
-import { Information } from '../components/pages/information';
+import { Information } from '../components/pages/information/Information';
 
 
 export const Rutas = () => {

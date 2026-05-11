@@ -20,7 +20,13 @@
 
 
 
-
+.viajar-content{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
 
 
 .navar-case {

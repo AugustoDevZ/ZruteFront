@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from "react-router-dom";
-import LoadMapa from '../../hooks/LoadMapa';
-import { useUbicacionStore } from "../../store/useUbicacionStore";
-import { routeSearchService } from "../../Services/ruteService"
-import { VerificarTokenService } from "../../Services/authService";
+import LoadMapa from '../../../hooks/LoadMapa';
+import { useUbicacionStore } from "../../../store/useUbicacionStore";
+import { routeSearchService } from "../../../Services/ruteService"
+import { VerificarTokenService } from "../../../Services/authService";
 
 export const Viajar = () => {
 
@@ -46,7 +46,7 @@ export const Viajar = () => {
           <button onClick={handleRouteSearch}>Buscar ruta más cercana de buses</button>
         </div>
       </div>
-      <LoadMapa />
+      <LoadMapa className='viajar-content'/>
 
     </div>
   )

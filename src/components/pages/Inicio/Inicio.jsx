@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { VerificarTokenService } from '../../Services/authService';
-import { useNavigateViajar } from '../../hooks/useNavigateViajar'
-import '../../styles/inicio_page.css'
+import { VerificarTokenService } from '../../../Services/authService';
+import { useNavigateViajar } from '../../../hooks/useNavigateViajar'
+import './inicio.css'
 
-import Subtitle from '../ui/subtitleStyle_v1'
-import Button from '../ui/buttonStyle_v1';
-import Line from '../ui/lineStyle_v1';
+import Subtitle from '../../ui/Subtitle/Subtitle'
+import Button from '../../ui/ButtonCommon/ButtonCommon';
+import Line from '../../ui/LineSubtitle/LineSubtitle';
 
 export const Inicio = () => {
 

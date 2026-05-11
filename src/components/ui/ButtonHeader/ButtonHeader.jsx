@@ -1,11 +1,11 @@
-import '../../styles/headerButtons_v1.css'
+import './ButtonHeader.css'
 
 import { useEffect, useState } from 'react';
 
-import { VerificarTokenService } from '../../Services/authService';
-import { PerfilUserService } from '../../Services/perfilService';
+import { VerificarTokenService } from '../../../Services/authService';
+import { PerfilUserService } from '../../../Services/perfilService';
 
-const HeaderButtonsStyle_v1 = () => {
+const ButtonHeader = () => {
 
     const [isAuth, setIsAuth] = useState(false);
     const [image, setImage] = useState("");
@@ -71,4 +71,4 @@ const HeaderButtonsStyle_v1 = () => {
     );
 };
 
-export default HeaderButtonsStyle_v1;
+export default ButtonHeader;

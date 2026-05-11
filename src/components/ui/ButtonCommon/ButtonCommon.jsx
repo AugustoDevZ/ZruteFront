@@ -1,7 +1,7 @@
-import '../../styles/button_v1.css'
+import './ButtonCommon.css'
 
 
-const button_v1 = ({text, action}) => {
+const ButtonCommon = ({text, action}) => {
   return (
     <a to="#" onClick={ action } className='custom-button' >
       
@@ -9,4 +9,4 @@ const button_v1 = ({text, action}) => {
     </a>
   )
 }
-export default button_v1 
+export default ButtonCommon

@@ -1,6 +1,6 @@
 import React from 'react'
-import "../../styles/information_page.css"
-import Subtitle from "../ui/subtitleStyle_v1"
+import "./Information.css"
+import Subtitle from "../../ui/Subtitle/Subtitle"
 //controles
 
 

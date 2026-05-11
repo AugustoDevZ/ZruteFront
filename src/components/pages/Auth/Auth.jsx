@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
-import { authenticateUserService, VerificarTokenService, registerUserService } from '../../Services/authService';
-import "../../styles/login_page.css"
-import Button from '../ui/buttonStyle_v1';
+import { authenticateUserService, VerificarTokenService, registerUserService } from '../../../Services/authService';
+import "./Auth.css"
+import Button from '../../ui/ButtonCommon/ButtonCommon';
 import { useNavigate } from "react-router-dom";
 
 export const Auth = ({ textOptionButton, textOptionAuth, titleAuth, type = 1 }) => {
