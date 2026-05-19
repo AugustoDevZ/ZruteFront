@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import './App.css'
 import { Rutas } from './routes/Rutas'
 
 function App() {
   
   return (
-    <div className='App'>
+    <div >
       <Rutas/>
     </div>
   )

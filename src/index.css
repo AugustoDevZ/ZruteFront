@@ -3,7 +3,7 @@
   --color-text-white: white;
   --color-text-description: #948ee9;
   --color-text-gradient: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
-
+  --color-text-gradient-line: linear-gradient(90deg,#38bff818, #38bff8b4, #818cf8, #c084fc91 #c084fc09);
 
   --header-bg-blur: blur(5px);
   --header-bg: #0b0b1fbe;

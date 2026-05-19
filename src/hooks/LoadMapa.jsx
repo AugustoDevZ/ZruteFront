@@ -34,6 +34,7 @@ function CambiarVista({ center }) {
 function LoadMapa() {
 
     const ubicacion = useUbicacionStore((state) => state.ubicacion);
+    const setUbicacion = useUbicacionStore((state) => state.setUbicacion);
 
     const limitesTrujillo = [
         [-8.20, -79.15],
@@ -47,6 +48,13 @@ function LoadMapa() {
             (position) => {
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
+
+                if(!lat && !lng){
+                    console.log(`Error ${lat} y ${lng}`)
+                    setUbicacion([0,0]);
+                    return;
+                }
+                
 
                 setUbicacion([lat, lng]);
             },

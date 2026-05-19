@@ -1,39 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { exitAuthService } from "../../../Services/authService"
-import { useNavigate } from "react-router-dom";
 
+import { ButtonNavar } from "../../ui/ButtonNavar/ButtonNavar.jsx"
+import { ButtonAction } from "../../ui/ButtonAction/ButtonAction.jsx"
+import "./Nav.css"
 
 export const Nav = () => {
-
-  const navigate = useNavigate();
-
-  /*
-  <h2 className='general-title'>PERFIL</h2>
-        <ul className='general'>
-          <li><NavLink to=""><i className="fi fi-br-hand-wave"></i>Editar perfil</NavLink></li>
-        </ul>
-        <h2 className='general-title'>GENERAL</h2>
-        <ul className='general'>
-          <li><NavLink to=""><i className="fi fi-br-hand-wave"></i>Bienvenidas y Despedidas</NavLink></li>
-          <li><NavLink to=""><i className="fi fi-br-hand-wave"></i>Tickets Inteligente</NavLink></li>
-          <li><NavLink to=""><i className="fi fi-br-hand-wave"></i>Chatea por ZReddix</NavLink></li>
-          <li><NavLink to=""><i className="fi fi-br-hand-wave"></i>Crear embeds</NavLink></li>
-          <li><NavLink to=""><i className="fi fi-br-hand-wave"></i>Editar Hilos</NavLink></li>
-        </ul>
-  
-  */
-  const exit = (e) => {
-    exitAuthService();
-    navigate("/login");
-  }
   return (
-    <div className='navar'>
+    <nav className='navar'>
 
 
-      <div className='content-colum'>
-        <div className='content-row  aditional-margin-top'>
-          <div className='navar-logo content-row'>
+      <div className='navar-logo-content'>
+        <div className='navar-logo-content-internal'>
+          <div className='navar-logo'>
             <svg width="54" height="54" viewBox="0 0 27 32" className="icon">
               <path
                 fill="currentColor"
@@ -46,36 +25,20 @@ export const Nav = () => {
           </div>
           <h1 className='navar-logo-title'>rute✨</h1>
         </div>
-        <div className='content-linea2'>
-          <div className="linea"></div>
+
+
+        <div className='navar-line-content'>
+          <div className="navar-line"></div>
         </div>
       </div>
 
 
-      <ul className='navar-case'>
-        <li className='navar-option'>
-          <Link to="/viajar">
-            <i className="fa-regular fa-map" />
-            <h3>NUEVA RUTA</h3>
-          </Link>
-        </li>
-        <li className='navar-option'>
-          <Link to="/historial">
-            <i className="fa-solid fa-clock-rotate-left"></i>
-            <h3>HISTORIAL</h3>
-          </Link>
-        </li>
-        <li className='navar-option'>
-          <Link to="/resenas">
-            <i className="fa-solid fa-book-bookmark"></i>
-            <h3>RESEÑAS</h3>
-          </Link>
-        </li>
-
+      <ul className='navar-list-buttons'>
+        <ButtonNavar text="Inicio" icon= "fa-regular fa-map" route="/viajar"/>
+        <ButtonNavar text="Reseñas" icon= "fa-regular fa-face-grin-stars" route="/reseñas"/>
+        <ButtonNavar text="Historial" icon= "fa-regular fa-address-book" route="/historial"/>
+        <ButtonAction text="Cerrar Sesión" icon="fa-solid fa-arrow-right-from-bracket"/>
       </ul>
-
-      <button onClick={exit}> Cerrrar sesion</button>
-
-    </div>
+    </nav>
   )
 }

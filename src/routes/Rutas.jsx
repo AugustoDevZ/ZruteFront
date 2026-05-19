@@ -44,7 +44,7 @@ export const Rutas = () => {
 
         <Route element={<LayoutPrivado />}>
           <Route path="/viajar" element={<Viajar />} />
-          <Route path="/resenas" element={<Reseñas />} />
+          <Route path="/reseñas" element={<Reseñas />} />
           <Route path="/historial" element={<Historial />} />
           <Route path="/configuracion" element={<Configurar />} />
         </Route>

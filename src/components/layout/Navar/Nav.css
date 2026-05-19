@@ -1,0 +1,54 @@
+.navar {
+  background-color: #915af01f;
+  min-height: 100vh;
+}
+
+.navar-logo-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.navar-logo-content-internal{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.navar-logo {
+  background-color: #915AF0;
+  border-radius: 20px;
+  width: 3.1rem;
+  height: 3rem;
+}
+
+.navar-list-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+.navar-line-content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navar-line{
+  width: 70%;
+  height: 0.1rem;
+  background: linear-gradient(90deg,#38bff818, #38bff8b4, #818cf8, #c084fc91, #c084fc09);
+}
+.navar-logo-title {
+  color: white;
+  margin-left: 0.5rem;
+}

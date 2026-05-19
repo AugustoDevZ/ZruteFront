@@ -4,6 +4,8 @@ import LoadMapa from '../../../hooks/LoadMapa';
 import { useUbicacionStore } from "../../../store/useUbicacionStore";
 import { routeSearchService } from "../../../Services/ruteService"
 import { VerificarTokenService } from "../../../Services/authService";
+import { Nav } from "../../layout/Navar/Nav.jsx"
+import "./Viajar.css"
 
 export const Viajar = () => {
 
@@ -18,6 +20,7 @@ export const Viajar = () => {
  -----------------------------------------*/
 
   const [destino, setDestino] = useState("");
+
   const ubicacion = useUbicacionStore((state) => state.ubicacion);
 
 
@@ -32,10 +35,19 @@ export const Viajar = () => {
   };
 
 
+  /*
+  
+  model:
+    ubicacion {lat ,lng}
+    destino = ""
+  
+  */
+
 
   return (
-    <div className='mapa'>
-      <div className='buscador-content'>
+    <div className='viajar-content'>
+
+        <div className='buscador-content'>
         <input className='buscador-destino'
           type='text'
           placeholder='Chan Chan'
@@ -46,11 +58,11 @@ export const Viajar = () => {
           <button onClick={handleRouteSearch}>Buscar ruta más cercana de buses</button>
         </div>
       </div>
-      <LoadMapa className='viajar-content'/>
 
+      <LoadMapa />
     </div>
   )
 }
 
 
-
+/* */

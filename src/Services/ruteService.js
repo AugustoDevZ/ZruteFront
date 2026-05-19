@@ -8,14 +8,36 @@ import zruteApi from "../api/zruteApi";
 -----------------------------------------*/
 
 export const routeSearchService = async (ubicacion, textDestino) => {
-  const res = await api.post("/zrute/rutas", {
-      Ubication: ubicacion,
-      Destino: textDestino
+
+  const token = localStorage.getItem("token");
+  if (!token) {
+    return null;
+  }
+
+
+  const res = await zruteApi.post(
+    "/routes/me",
+    {
+      ubication: ubicacion,
+      destino: textDestino
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     }
   );
   return res.data;
+
+
 };
 
 
 //Google Places API
 //Nominatim + BD propia
+
+/*ubication: ubicacion,
+      destino: textDestino
+    }
+  );
+  return res.data; */
